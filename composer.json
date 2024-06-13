@@ -1,0 +1,14 @@
+{
+    "name": "jonas/sin8",
+    "description": "Sicherhiet in Netzwerken Aufgabe 8",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jonas Rauchardt",
+            "email": "jonas.rauchardt@web.de"
+        }
+    ],
+    "require": {
+      "spomky-labs/otphp": "11.0"
+    }
+}

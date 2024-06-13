@@ -1,0 +1,74 @@
+/* styles.css */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+.container h1 {
+  margin-bottom: 20px;
+}
+.container label {
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  text-align: left;
+}
+.container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+.container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container button:hover {
+  background-color: #777;
+}
+.container .message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.container .message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.container .message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.container img {
+  margin-top: 20px;
+  border: 5px solid #555;
+  border-radius: 10px;
+}
+.container button:hover {
+  background-color: #777;
+}
+.error {
+  color: red;
+  margin-bottom: 20px;
+}

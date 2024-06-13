@@ -1,8 +1,6 @@
 <?php
 require 'vendor/autoload.php';
 use OTPHP\TOTP;
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Writer\PngWriter;
 
 session_start();
 if (!isset($_SESSION['username']) || !isset($_SESSION['secret'])) {
@@ -15,11 +13,18 @@ $secret = $_SESSION['secret'];
 
 $totp = TOTP::create($secret);
 $totp->setLabel($username);
-
-$qrCode = new QrCode($totp->getProvisioningUri());
-$writer = new PngWriter();
-$qrCodeImage = $writer->write($qrCode)->getString();
-
-echo '<h1>QR-Code für ' . htmlspecialchars($username) . '</h1>';
-echo '<img src="data:image/png;base64,' . base64_encode($qrCodeImage) . '">';
+$qrCode = $totp->getProvisioningUri();
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR-Code Registrierung</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>QR-Code für <?php echo htmlspecialchars($username); ?></h1>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=<?php echo urlencode($qrCode); ?>&size=200x200" alt="QR Code">
+</div>
+</body>
+</html>
